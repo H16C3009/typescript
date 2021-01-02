@@ -1,8 +1,11 @@
+type Combineable = number | string
+type ConversionDescriptor = 'as-number' | 'as-text'
+
 // 引数に対して、複数の型を指定することができる（タプル型）
 function combine(
-    input1: number | string,
-    input2: number | string,
-    resultConversion: 'as-number' | 'as-text',
+    input1: Combineable,
+    input2: Combineable,
+    resultConversion: ConversionDescriptor,
 ) {
     let result;
     if (typeof input1 === 'number' && typeof input2 === 'number' ||
