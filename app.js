@@ -1,4 +1,6 @@
 "use strict";
-var userNam = 'Ma';
+let age = 30;
+age = 3;
+const userName = 'Ma';
 // userName = 3;
-console.log(userNam);
+console.log(userName);
