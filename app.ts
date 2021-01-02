@@ -1,8 +1,3 @@
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-
-// デフォルトは自動的にインクリメント
 enum Role {
     ADMIN = 'ADMIN',
     READ_ONLY = 100,
@@ -16,6 +11,9 @@ const person = {
     role: Role.ADMIN,
 };
 
+// # 必要でなければ、any型は避けるほうがいい（typescriptが型推論をしてくれないため）
+let favoriteActivities: any[];
+favoriteActivities = ['Sports'];
 
 console.log(person)
 
