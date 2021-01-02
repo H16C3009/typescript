@@ -1,26 +1,15 @@
-enum Role {
-    ADMIN = 'ADMIN',
-    READ_ONLY = 100,
-    AUTHOR = 200,
+// 引数に対して、複数の型を指定することができる（タプル型）
+function combine(input1: number | string, input2: number | string) {
+    let result;
+    if ( typeof input1 === 'number' && typeof input2 === 'number' ) {
+        result = input1 + input2
+    } else {
+        result = input1.toString() + input2.toString()
+    }
+    // const result = input1 + input2
+    return result
 }
 
-const person = {
-    name: 'yota',
-    age: 31,
-    hobbies: ['sports', 'cooking'],
-    role: Role.ADMIN,
-};
+console.log(combine(30, 26))
 
-// # 必要でなければ、any型は避けるほうがいい（typescriptが型推論をしてくれないため）
-let favoriteActivities: any[];
-favoriteActivities = ['Sports'];
-
-console.log(person)
-
-for (const hobby of person.hobbies) {
-    console.log(hobby.toUpperCase())
-}
-
-if (person.role === Role.ADMIN) {
-    console.log('管理者専用ユーザー')
-}
+console.log(combine('Max', 'Anna'))
