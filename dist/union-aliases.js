@@ -13,3 +13,4 @@ function combine(input1, input2, resultConversion) {
 console.log(combine(30, 26, 'as-number'));
 console.log(combine('30', '26', 'as-number'));
 console.log(combine('Max', 'Anna', 'as-text'));
+//# sourceMappingURL=union-aliases.js.map

@@ -20,3 +20,4 @@ for (const hobby of person.hobbies) {
 if (person.role === Role.ADMIN) {
     console.log('管理者専用ユーザー');
 }
+//# sourceMappingURL=objs-arrays-enum.js.map

@@ -14,3 +14,4 @@ addAndHandle(10, 20, (result) => {
 });
 let combineValues;
 combineValues = add;
+//# sourceMappingURL=functions.js.map

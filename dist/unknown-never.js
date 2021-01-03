@@ -11,3 +11,4 @@ function generateError(message, code) {
 }
 const result = generateError('happend server error', 500);
 console.log(result);
+//# sourceMappingURL=unknown-never.js.map
