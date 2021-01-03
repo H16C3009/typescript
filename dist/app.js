@@ -1,10 +1,15 @@
 "use strict";
 const userName = 'Max';
 let age = 30;
-var result;
-function add(a, b) {
-    result = a + b;
-    return result;
+const add = (a, b) => a + b;
+const printOutput = (output) => {
+    console.log(output);
+};
+printOutput(add(5, 2));
+const button = document.querySelector('button');
+if (button) {
+    button.addEventListener('click', event => {
+        console.log(event);
+    });
 }
-console.log(result);
 //# sourceMappingURL=app.js.map
