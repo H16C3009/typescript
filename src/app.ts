@@ -1,54 +1,30 @@
-const userName = 'Max'
-// userName = "as"
-
-let age = 30
-
-// var result
-// function add(a: number, b: number) {
-//     let result
-//     result = a + b
-//     return result
+// const add = (...numbers: number[]) => {
+//     return numbers.reduce((curResult, curValue) => {
+//         return curResult + curValue;
+//     }, 0)
 // }
 
-const add = (a: number, b: number = 1) => a + b;
-
-// const add = (a: number, b: number) => {
-//     return a + b
-// }
-
-// const printOutput: (output: string | number) => void = output => {
-//     console.log(output)
-// }
-
-const printOutput = (output: string | number): void => {
-    console.log(output)
+const add = (...numbers: [number, number, number]) => {
+    return numbers.reduce((curResult, curValue) => {
+        return curResult + curValue;
+    }, 0)
 }
 
-printOutput(add(5))
 
-const button = document.querySelector('button');
+const addedNumbers = add(5, 10, 2)
+console.log(addedNumbers)
 
-if (button) {
-    button.addEventListener('click', event => {
-        console.log(event)
-    })
-}
 
 
 const hobbies = ['sports', 'cooking']
-const activeHobbies = ['hiking', ...hobbies]
-
-activeHobbies.push(...hobbies)
-console.log(activeHobbies)
+const [h1, h2, ...remaingHobbies] = hobbies
+console.log(hobbies, h1, h2)
 
 
 const person = {
-    name: 'max',
+    Name: 'max',
     age: 30
 }
 
-// const copiedPerson = person;
-const copiedPerson = {
-    ...person
-};
-console.log(copiedPerson)
+const { Name: userName, age } = person;
+console.log(person, userName, age)

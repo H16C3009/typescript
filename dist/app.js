@@ -1,25 +1,18 @@
 "use strict";
-const userName = 'Max';
-let age = 30;
-const add = (a, b = 1) => a + b;
-const printOutput = (output) => {
-    console.log(output);
+const add = (...numbers) => {
+    return numbers.reduce((curResult, curValue) => {
+        return curResult + curValue;
+    }, 0);
 };
-printOutput(add(5));
-const button = document.querySelector('button');
-if (button) {
-    button.addEventListener('click', event => {
-        console.log(event);
-    });
-}
+const addedNumbers = add(5, 10, 2);
+console.log(addedNumbers);
 const hobbies = ['sports', 'cooking'];
-const activeHobbies = ['hiking', ...hobbies];
-activeHobbies.push(...hobbies);
-console.log(activeHobbies);
+const [h1, h2, ...remaingHobbies] = hobbies;
+console.log(hobbies, h1, h2);
 const person = {
-    name: 'max',
+    Name: 'max',
     age: 30
 };
-const copiedPerson = Object.assign({}, person);
-console.log(copiedPerson);
+const { Name: userName, age } = person;
+console.log(person, userName, age);
 //# sourceMappingURL=app.js.map
