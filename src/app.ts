@@ -1,19 +1,26 @@
-class Department {
+// abstractクラスはインスタンス作成できない。継承されるためのクラスである。
+abstract class Department {
     // default is public
     // private name: string;
     // private:外部、外部クラスからアクセスできない
     // private employees: string[] = []
     // protected:外部からアクセスできないが、このクラスを継承したサブ（派生）クラスからはアクセスできる
     protected employees: string[] = []
+    // static property
+    static fiscalYear = 2020
 
+    // static method
+    static createEmployee(name: string) {
+        return { name: name }
+    }
 
-    constructor(private readonly id: string, private name: string) {
+    constructor(protected readonly id: string, private name: string) {
         // this.name = n
+        // console.log(Department.fiscalYear)
+        console.log(this.name)
     }
 
-    describe(this: Department) {
-        console.log(`department (${this.id}):${this.name}`)
-    }
+    abstract describe(this: Department): void;
 
     addEmployee(employee: string) {
         // this.id = 'D2'
@@ -34,6 +41,10 @@ class ITDepartment extends Department {
     constructor(id: string, admins: string[]) {
         super(id, 'IT')
         this.admins = admins
+    }
+
+    describe() {
+        console.log('IT部門・ID：' + this.id)
     }
 }
 
@@ -69,6 +80,10 @@ class AccountingDepartment extends Department {
         this.lastReport = reports[0]
     }
 
+    describe() {
+        console.log('会計部門・ID：' + this.id)
+    }
+
     addReport(text: string) {
         this.reports.push(text)
         this.lastReport = text
@@ -88,13 +103,16 @@ class AccountingDepartment extends Department {
 }
 
 
-// const it = new ITDepartment('D1', ['Max'])
-// it.addEmployee('Max')
-// it.addEmployee('Manu')
+const employee1 = Department.createEmployee('Max')
+console.log(employee1, Department.fiscalYear)
 
-// console.log(it)
-// it.describe()
-// it.printEmployeeInfomation()
+const it = new ITDepartment('D1', ['Max'])
+it.addEmployee('Max')
+it.addEmployee('Manu')
+
+console.log(it)
+it.describe()
+it.printEmployeeInfomation()
 
 
 const accounting = new AccountingDepartment('D2', [])
@@ -111,6 +129,8 @@ console.log(accounting.mostRecentReport)
 // override method
 accounting.addEmployee('Max')
 accounting.addEmployee('Manu')
+
+accounting.describe()
 
 // accounting.printReports()
 // accounting.printEmployeeInfomation()
