@@ -10,7 +10,7 @@ let age = 30
 //     return result
 // }
 
-const add = (a: number, b: number) => a + b;
+const add = (a: number, b: number = 1) => a + b;
 
 // const add = (a: number, b: number) => {
 //     return a + b
@@ -24,7 +24,7 @@ const printOutput = (output: string | number): void => {
     console.log(output)
 }
 
-printOutput(add(5,2))
+printOutput(add(5))
 
 const button = document.querySelector('button');
 
