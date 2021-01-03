@@ -1,18 +1,9 @@
 "use strict";
-const add = (...numbers) => {
-    return numbers.reduce((curResult, curValue) => {
-        return curResult + curValue;
-    }, 0);
-};
-const addedNumbers = add(5, 10, 2);
-console.log(addedNumbers);
-const hobbies = ['sports', 'cooking'];
-const [h1, h2, ...remaingHobbies] = hobbies;
-console.log(hobbies, h1, h2);
-const person = {
-    Name: 'max',
-    age: 30
-};
-const { Name: userName, age } = person;
-console.log(person, userName, age);
+class Department {
+    constructor(n) {
+        this.name = n;
+    }
+}
+const accounting = new Department('Accounting');
+console.log(accounting);
 //# sourceMappingURL=app.js.map
