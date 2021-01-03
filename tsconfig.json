@@ -75,5 +75,5 @@
   },
   "exclude": ["node_modules"],                // would be default
   // "exclude": ["**/*.dev.ts"]
-  // "include": ["src/app.ts", "src/analytics.ts"],
+  "include": ["src/app.ts", "src/analytics.ts"],
 }

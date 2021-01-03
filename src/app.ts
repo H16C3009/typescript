@@ -1,25 +1,23 @@
-let appId = 'abc'
-const button = document.querySelector('button');
-// const button = document.querySelector('button')!;
+const userName = 'Max'
+// userName = "as"
 
-function add1(num1: number, num2: number) {
-    if (num1 + num2 > 0) {
-        return num1 + num2;
-    }
-    return;
+let age = 30
+
+// var result
+function add(a: number, b: number) {
+    let result
+    result = a + b
+    return result
 }
 
-
-function clickHandler(message: string) {
-    // let userName = 'Max'
-    console.log('clicked' + message)
+if (age >= 20) {
+    let isAdult = true
 }
 
+console.log(isAdult)
 
-if (button) {
-    // a comment 
-    button.addEventListener(
-        'click',
-        clickHandler.bind(null, " you're welcome"),
-    );
+if (age >= 20) {
+    var isAdult = true
 }
+
+console.log(isAdult)
