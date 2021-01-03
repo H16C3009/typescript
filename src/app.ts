@@ -34,3 +34,21 @@ if (button) {
     })
 }
 
+
+const hobbies = ['sports', 'cooking']
+const activeHobbies = ['hiking', ...hobbies]
+
+activeHobbies.push(...hobbies)
+console.log(activeHobbies)
+
+
+const person = {
+    name: 'max',
+    age: 30
+}
+
+// const copiedPerson = person;
+const copiedPerson = {
+    ...person
+};
+console.log(copiedPerson)
